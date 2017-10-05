@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>IFE JavaScript Task 08</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="controller">
+    <label for="animation-effect">选择遍历效果: </label>
+    <select id="animation-effect" name="animation-effect">
+      <option value="background">Background</option>
+      <option value="border">Border</option>
+    </select>
+    <button id="pre-traverse">先序遍历</button>
+    <button id="post-traverse">后序遍历</button>
+    <label for="query-content">输入查询内容: </label>
+    <input id="query-content" type="text" name="query-content">
+    <button id="pre-query">查询(先序遍历)</button>
+    <button id="post-query">查询(后序遍历)</button>
+  </div>
+  <div id="tree">
+    <div class="root">
+      <p>super</p>
+      <div class="div0">
+        <p>thing</p>
+        <div class="div1">
+          <p>apple</p>
+          <div class="div2">
+            <p>pear</p>
+          </div>
+          <div class="div2">
+            <p>pig</p>
+          </div>
+          <div class="div2">
+            <p>cola</p>
+            <div class="div3">
+              <p>water</p>
+            </div>
+            <div class="div3">
+              <p>orange</p>
+            </div>
+          </div>
+          <div class="div2">
+            <p>football</p>
+          </div>
+        </div>
+        <div class="div1">
+          <p>phone</p>
+        </div>
+        <div class="div1">
+          <p>study</p>
+          <div class="div2">
+            <p>book</p>
+          </div>
+          <div class="div2">
+            <p>school</p>
+          </div>
+        </div>
+      </div>
+      <div class="div0">
+        <p>note</p>
+        <div class="div1">
+          <p>human</p>
+          <div class="div2">
+            <p>code</p>
+          </div>
+          <div class="div2">
+            <p>operation</p>
+          </div>
+          <div class="div2">
+            <p>man</p>
+          </div>
+        </div>
+        <div class="div1">
+          <p>program</p>
+          <div class="div2">
+            <p>element</p>
+            <div class="div3">
+              <p>cat</p>
+            </div>
+          </div>
+          <div class="div2">
+            <p>glass</p>
+          </div>
+        </div>
+      </div>
+      <div class="div0">
+        <p>fish</p>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>排序算法可视化</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="prism.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <article id="sort-algor-visual">
+    <h1>排序算法可视化</h1>
+    <section id="controller">
+      <div id="control-box">
+        <div id="input-data">
+          <label for="input-number">输入数据:</label>
+          <input id="input-number" type="number" name="input-number" max="99" min="10" step="5">
+          <button class="btn" id="left-in">左侧入</button>
+          <button class="btn" id="right-in">右侧入</button>
+          <button class="btn" id="left-out">左侧出</button>
+          <button class="btn" id="right-out">右侧出</button>
+        </div>
+        <div id="sort-setting">
+          <label for="sort-count">数据量:</label>
+          <input id="sort-count" type="number" name="sort-count" max="50" min="10" step="5">
+          <button class="btn" id="auto-create">一键生成待排序数据</button>
+          <label for="sort-algor">选择排序算法:</label>
+          <select id="sort-algor" name="sort-algor">
+            <option value="bubble">冒泡排序</option>
+            <option value="selection">选择排序</option>
+            <option value="insertion">插入排序</option>
+            <option value="shell">希尔排序</option>
+            <option value="merge">归并排序</option>
+            <option value="quick">快速排序</option>
+            <option value="heap">堆排序</option>
+          </select>
+          <button class="btn" id="sort-queue">排序</button>
+        </div>
+        <div id="sort-result">
+          <span id="sort-state"></span>
+          <span id="sort-time"></span>
+        </div>
+      </div>
+    </section>
+    <section id="queue-container">
+      <ul id="queue"></ul>
+    </section>
+  </article>
+  <article id="sort-algor-code">
+    <h1>七大排序算法代码展示</h1>
+    <section id="bubble-sort">
+      <h2><span>冒泡排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">function bubbleSort(arr) {
+  for (var i = 0; i < arr.length - 1; i++) {
+    for (var j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1])[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+    }
+  }
+  return arr;
+}</code></pre>
+    </section>
+    <section id="selection-sort">
+      <h2><span>选择排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">function selectionSort(arr) {
+  for (var i = 0; i < arr.length - 1; i++) {
+    var index = i;
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[index]) index = j;
+    }
+    [arr[i], arr[index]] = [arr[index], arr[i]];
+  }
+  return arr;
+}</code></pre>
+    </section>
+    <section id="insertion-sort">
+      <h2><span>插入排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">function insertionSort(arr) {
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] < arr[i - 1]) {
+      var pos = i,
+        cur = arr[i];
+      do {
+        arr[pos] = arr[pos - 1];
+      } while (--pos > 0 && cur < arr[pos - 1]);
+    }
+    arr[pos] = cur;
+  }
+  return arr;
+}</code></pre>
+    </section>
+    <section id="shell-sort">
+      <h2><span>希尔排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">// 也称为缩小增量排序
+function shellSort(arr) {
+  var increment = arr.length;
+  do {
+    increment = Math.floor(increment / 3) + 1;
+    for (var i = 0; i < increment; i++) {
+      for (var j = i + increment; j < arr.length; j += increment) {
+        if (arr[j] < arr[j - increment]) {
+          var pos = j,
+            cur = arr[j];
+          do {
+            arr[pos] = arr[pos - increment];
+            pos -= increment;
+          } while (pos >= increment && cur < arr[pos - increment]);
+          arr[pos] = cur;
+        }
+      }
+    }
+  } while (increment > 1);
+  return arr;
+}</code></pre>
+    </section>
+    <section id="merge-sort">
+      <h2><span>归并排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">function mergeSort(arr) {
+  var len = arr.length;
+  if (len === 1) return arr;
+  var left = mergeSort(arr.slice(0, Math.floor(len / 2)));
+  var right = mergeSort(arr.slice(Math.floor(len / 2)));
+  return merge(left, right);
+}
+
+function merge(left, right) {
+  if (!left) return right;
+  if (!right) return left;
+  var res = [];
+  while (left.length > 0 && right.length > 0) {
+    if (left[0] <= right[0]) {
+      res.push(left.shift());
+    } else {
+      res.push(right.shift());
+    }
+  }
+  if (left.length === 0) {
+    return res.concat(right);
+  } else if (right.length === 0) {
+    return res.concat(left);
+  }
+}</code></pre>
+    </section>
+    <section id="quick-sort">
+      <h2><span>快速排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+  var pivot = arr[0],
+    len = arr.length,
+    last_small = 0;
+  for (var i = 1; i < len; i++) {
+    if (arr[i] < pivot) {
+      [arr[last_small + 1], arr[i]] = [arr[i], arr[last_small + 1]];
+      last_small++;
+    }
+  }
+  arr[0] = arr[last_small];
+  arr[last_small] = pivot;
+  var left = quickSort(arr.slice(0, last_small));
+  var right = quickSort(arr.slice(last_small + 1));
+  return left.concat([pivot], right);
+}</code></pre>
+    </section>
+    <section id="heap-sort">
+      <h2><span>堆排序</span></h2>
+      <pre class="line-numbers"><code class="language-javascript">function heapSort(arr) {
+  // 建堆
+  buildHeap(arr);
+
+  // 移走、提升
+  for (var last_unsorted = arr.length - 1; last_unsorted > 0; last_unsorted--) {
+    var current = arr[last_unsorted];
+    arr[last_unsorted] = arr[0];
+    insertHeap(arr, current, 0, last_unsorted - 1);
+  }
+
+  return arr;
+}
+
+// 建堆：对每一个非叶子节点(从最后一个非叶子节点到根)进行插入堆的操作
+function buildHeap(arr) {
+  var len = arr.length;
+  for (var i = Math.floor(len / 2) - 1; i >= 0; i--) {
+    insertHeap(arr, arr[i], i, len - 1);
+  }
+}
+
+// 插入堆：对以当前这个非叶子节点为根节点的树的各个节点进行一定的操作
+// 达到所有父节点的值都大于等于子节点的值
+function insertHeap(arr, current, start, end) {
+  var large = start * 2 + 1;
+  while (large <= end) {
+    if (large < end && arr[large] < arr[large + 1]) large++;
+
+    if (current >= arr[large]) break;
+    else {
+      arr[start] = arr[large];
+      start = large;
+      large = start * 2 + 1;
+    }
+  }
+  arr[start] = current;
+}</code></pre>
+    </section>
+  </article>
+  <article id="sort-algor-analysis">
+    <h1>排序算法复杂度分析</h1>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">类别</th>
+          <th rowspan="2">排序方法</th>
+          <th colspan="3">时间复杂度</th>
+          <th>空间复杂度</th>
+          <th rowspan="2">稳定性</th>
+        </tr>
+        <tr>
+          <th>平均情况</th>
+          <th>最好情况</th>
+          <th>最坏情况</th>
+          <th>辅助存储</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">插入排序</td>
+          <td>直接插入</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(n)</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(1)</td>
+          <td>稳定</td>
+        </tr>
+        <tr>
+          <td>希尔排序</td>
+          <td>O(n<sup>1.3</sup>)</td>
+          <td>O(n)</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(1)</td>
+          <td>不稳定</td>
+        </tr>
+        <tr>
+          <td rowspan="2">选择排序</td>
+          <td>直接选择</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(1)</td>
+          <td>不稳定</td>
+        </tr>
+        <tr>
+          <td>堆排序</td>
+          <td>O(nlgn)</td>
+          <td>O(nlgn)</td>
+          <td>O(nlgn)</td>
+          <td>O(1)</td>
+          <td>不稳定</td>
+        </tr>
+        <tr>
+          <td rowspan="2">交换排序</td>
+          <td>冒泡选择</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(n)</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(1)</td>
+          <td>稳定</td>
+        </tr>
+        <tr>
+          <td>快速排序</td>
+          <td>O(nlgn)</td>
+          <td>O(nlgn)</td>
+          <td>O(n<sup>2</sup>)</td>
+          <td>O(nlgn)</td>
+          <td>不稳定</td>
+        </tr>
+        <tr>
+          <td colspan="2">归并排序</td>
+          <td>O(nlgn)</td>
+          <td>O(nlgn)</td>
+          <td>O(nlgn)</td>
+          <td>O(n)</td>
+          <td>稳定</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+  <aside id="menu">
+    <p>目录</p>
+    <ul id="goto-item" class="menu-items">
+      <li goto="sort-algor-visual" class="menu-item">排序算法可视化</li>
+      <li goto="sort-algor-code" class="menu-item">七大排序算法代码展示
+        <ul class="next-menu-items">
+          <li goto="bubble-sort">冒泡排序</li>
+          <li goto="selection-sort">选择排序</li>
+          <li goto="insertion-sort">插入排序</li>
+          <li goto="shell-sort">希尔排序</li>
+          <li goto="merge-sort">归并排序</li>
+          <li goto="quick-sort">快速排序</li>
+          <li goto="heap-sort">堆排序</li>
+        </ul>
+      </li>
+      <li goto="sort-algor-analysis">排序算法复杂度分析</li>
+    </ul>
+  </aside>
+  <aside id="go-top" title="返回顶部"><a href="javascript:scroll(0,0)">▲</a></aside>
+  <script src="main.js"></script>
+  <script src="prism.js"></script>
+</body>
+
+</html>

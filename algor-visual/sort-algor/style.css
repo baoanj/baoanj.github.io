@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#controller {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #838383;
+}
+
+#control-box>div {
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #838383;
+  border-radius: 5px;
+  color: #838383;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: #606060;
+  border: 1px solid #606060;
+}
+
+input,
+select {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #838383;
+  border-radius: 5px;
+  color: #838383;
+  background-color: transparent;
+  outline: none;
+}
+
+#queue-container {
+  height: 300px;
+  margin: 1em;
+  padding: 2em;
+  border: 1px solid blue;
+}
+
+span#sort-state {
+  color: rgba(255, 0, 0, 0.59);
+}
+
+ul#queue {
+  height: 100%;
+  position: relative;
+  border-bottom: 1px dotted #099C56;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+ul#queue li {
+  display: block;
+  width: 20px;
+  margin: 0 5px;
+  background-color: #EC0505;
+  position: relative;
+  transition: all 0.5s;
+}
+
+ul#queue li p {
+  position: absolute;
+  top: -20px;
+  text-align: center;
+}
+
+#sort-algor-code {
+  margin: 1em;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 1em;
+}
+
+#sort-algor-code h1,
+#sort-algor-code h2 {
+  margin: 2em 1em 1em 1em;
+}
+
+h2 span {
+  border-top: 2px solid #238D68;
+  border-bottom: 2px solid #238D68;
+  padding: 5px;
+  color: #606060;
+  font-size: 20px;
+}
+
+#sort-algor-analysis {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sort-algor-analysis table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+#sort-algor-analysis table td,
+#sort-algor-analysis table th {
+  padding: .5em;
+  border: 1px solid #ddd;
+}
+
+#go-top {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  font-size: 2em;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 2em;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#go-top a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+#go-top:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#go-top:hover a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#menu {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  color: white;
+  transition: all 0.3s;
+}
+
+#menu p {
+  width: 3em;
+  height: 3em;
+  background-color: #1E88E5;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#menu:hover p {
+  -moz-box-shadow: 0px 0px 0px #1F26FF, 4px 4px 20px #1E1E82;
+  -webkit-box-shadow: 0px 0px 0px #1F26FF, 4px 4px 20px #1E1E82;
+  box-shadow: 0px 0px 0px #1F26FF, 4px 4px 20px #1E1E82;
+}
+
+#menu:hover .menu-items {
+  -moz-box-shadow: 0px 0px 0px #1F26FF, 4px 4px 20px #1E1E82;
+  -webkit-box-shadow: 0px 0px 0px #1F26FF, 4px 4px 20px #1E1E82;
+  box-shadow: 0px 0px 0px #1F26FF, 4px 4px 20px #1E1E82;
+}
+
+#menu li {
+  cursor: pointer;
+  position: relative;
+}
+
+#menu li:hover::before {
+  content: '»';
+  position: absolute;
+  left: -1em;
+}
+
+.menu-items {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  background-color: #1E88E5;
+  list-style: none;
+  opacity: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+#menu:hover .menu-items {
+  top: 3em;
+  border-radius: 0;
+  opacity: 1;
+  width: 208px;
+  height: 242px;
+  padding: 1em 1em 1em 2em;
+}
+
+.next-menu-items {
+  list-style: none;
+  margin-left: 2em;
+}

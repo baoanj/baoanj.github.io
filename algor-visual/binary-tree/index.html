@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>IFE JavaScript Task 07</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="controller">
+    <label for="deep">输入二叉树深度,范围[3, 5]: </label>
+    <input id="deep" type="number" name="deep" max="5" min="3">
+    <button id="create">创建一颗二叉树</button>
+    <label for="animation-effect">选择遍历效果: </label>
+    <select id="animation-effect" name="animation-effect">
+      <option value="background">Background</option>
+      <option value="border">Border</option>
+    </select>
+    <button id="pre-traverse">先序遍历</button>
+    <button id="in-traverse">中序遍历</button>
+    <button id="post-traverse">后序遍历</button>
+  </div>
+  <div class="root">
+    <div class="div0 left">
+      <div class="div1 left">
+        <div class="div2 left"></div>
+        <div class="div2 right"></div>
+      </div>
+      <div class="div1 right">
+        <div class="div2 left"></div>
+        <div class="div2 right"></div>
+      </div>
+    </div>
+    <div class="div0 right">
+      <div class="div1 left">
+        <div class="div2 left"></div>
+        <div class="div2 right"></div>
+      </div>
+      <div class="div1 right">
+        <div class="div2 left"></div>
+        <div class="div2 right"></div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

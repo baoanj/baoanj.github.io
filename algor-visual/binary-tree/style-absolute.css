@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#controller {
+	margin: 20px 10px;
+}
+
+.root {
+	height: 200px;
+	margin: 20px 10px;
+	border: 2px solid black;
+	position: relative;
+}
+
+.root div {
+	border: 2px solid black;
+	width: calc(50% - 13px);
+	height: calc(100% - 40px);
+	box-sizing: border-box;
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+}
+
+.left {
+	left: 10px;
+}
+
+.right {
+	right: 10px;
+}
+
+@keyframes traverse-border {
+	0% {
+		border-top: 2px solid #1973A9;
+		border-right: 2px solid #7D1CCE;
+		border-bottom: 2px solid #D926A1;
+		border-left: 2px solid #DF0F3D;
+	}
+	25% {
+		border-top: 2px solid #DF0F3D;
+		border-right: 2px solid #1973A9;
+		border-bottom: 2px solid #7D1CCE;
+		border-left: 2px solid #D926A1;
+	}
+	50% {
+		border-top: 2px solid #D926A1;
+		border-right: 2px solid #DF0F3D;
+		border-bottom: 2px solid #1973A9;
+		border-left: 2px solid #7D1CCE;
+	}
+	75% {
+		border-top: 2px solid #7D1CCE;
+		border-right: 2px solid #D926A1;
+		border-bottom: 2px solid #DF0F3D;
+		border-left: 2px solid #1973A9;
+	}
+	100% {
+		border-top: 2px solid #1fde0e;
+		border-right: 2px solid #1fde0e;
+		border-bottom: 2px solid #1fde0e;
+		border-left: 2px solid #1fde0e;
+	}
+}
+
+@keyframes traverse-background {
+	0% {
+		background: -webkit-linear-gradient(120deg, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(120deg, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(120deg, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(120deg, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33);
+		/* 标准的语法（必须放在最后） */
+	}
+	20% {
+		background: -webkit-linear-gradient(120deg, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(120deg, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(120deg, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(120deg, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB, #0EBF88);
+		/* 标准的语法（必须放在最后） */
+	}
+	40% {
+		background: -webkit-linear-gradient(120deg, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(120deg, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(120deg, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(120deg, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8, #14AFCB);
+		/* 标准的语法（必须放在最后） */
+	}
+	60% {
+		background: -webkit-linear-gradient(120deg, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(120deg, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(120deg, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(120deg, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA, #0D41B8);
+		/* 标准的语法（必须放在最后） */
+	}
+	80% {
+		background: -webkit-linear-gradient(120deg, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(120deg, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(120deg, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(120deg, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7, #4F17BA);
+		/* 标准的语法（必须放在最后） */
+	}
+	100% {
+		background: -webkit-linear-gradient(120deg, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(120deg, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(120deg, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(120deg, #4F17BA, #0D41B8, #14AFCB, #0EBF88, #0CCF33, #5F1FC7);
+		/* 标准的语法（必须放在最后） */
+	}
+}
