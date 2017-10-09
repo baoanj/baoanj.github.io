@@ -431,6 +431,7 @@ body.is-ie header.major>h1:after {
 	height: 60vh;
 	max-height: 32em;
 	min-height: 22em;
+	position: relative;
 }
 
 #banner:after {
@@ -565,13 +566,6 @@ body.is-loading #banner>.inner {
 	-ms-transform: translateX(-0.5em);
 	transform: translateX(-0.5em);
 	opacity: 0;
-}
-
-@media screen and (max-width: 1280px) {
-
-	#banner {
-		background-attachment: scroll;
-	}
 }
 
 @media screen and (max-width: 736px) {

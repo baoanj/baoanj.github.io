@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 240px) {
+	article {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 241px) and (max-width: 360px) {
+	article {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 361px) and (max-width: 480px) {
+	article {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+	article {
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1199px) {
+	article {
+		width: 33.33%;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+	article {
+		width: 25%;
+	}
+}
+
+@media only screen and (min-width: 1601px) and (max-width: 2048px) {
+	article {
+		width: 25%;
+	}
+}
+
+@media only screen and (min-width: 2049px) and (max-width: 5000px) {
+	article {
+		width: 20%;
+	}
+}
+
+article {
+	height: 30vh;
+	padding: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transition: all 0.5s ease;
+	position: relative;
+}
+
+article p {
+	color: white;
+	font-size: 1.75em;
+	font-weight: 400;
+	padding-bottom: 5px;
+	border-bottom: 3px solid white;
+	z-index: 3;
+}
+
+article::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	opacity: 0.75;
+	transition: all 0.5s ease;
+}
+
+article:nth-child(1)::before {
+	background-color: #6fc3df;
+}
+
+article:nth-child(2)::before {
+	background-color: #8d82c4;
+}
+
+article:nth-child(3)::before {
+	background-color: #ec8d81;
+}
+
+article:nth-child(4)::before {
+	background-color: #e7b788;
+}
+
+article::after {
+	background-color: rgba(36, 41, 67, 0.25);
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+article:hover::before {
+	opacity: 0;
+}
+
+article a {
+	text-decoration: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 4;
+}

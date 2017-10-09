@@ -1,0 +1,387 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #565656;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #24292e;
+}
+
+@media (min-width: 241px) and (max-width: 360px) {
+	.container {
+		width: 100%;
+	}
+
+	.main {
+		padding: 20px 10px 10px 10px;
+	}
+
+	.header {
+		padding: 10px 10px 10px 10px;
+	}
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+	.container {
+		width: 100%;
+	}
+
+	.main {
+		padding: 25px 20px 20px 20px;
+	}
+
+	.header {
+		padding: 20px 20px 15px 20px;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 799px) {
+	.container {
+		width: 90%;
+	}
+
+	.main {
+		padding: 25px 30px 30px 30px;
+	}
+
+	.header {
+		padding: 30px 30px 15px 30px;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+	.container {
+		width: 80%;
+	}
+
+	.main {
+		padding: 30px 40px 40px 40px;
+	}
+
+	.header {
+		padding: 40px 40px 20px 40px;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+	.container {
+		width: 70%;
+	}
+
+	.main {
+		padding: 30px 50px 50px 50px;
+	}
+
+	.header {
+		padding: 50px 50px 20px 50px;
+	}
+}
+
+@media (min-width: 1601px) and (max-width: 2048px) {
+	.container {
+		width: 60%;
+	}
+
+	.main {
+		padding: 30px 50px 50px 50px;
+	}
+
+	.header {
+		padding: 50px 50px 20px 50px;
+	}
+}
+
+@media (min-width: 2049px) and (max-width: 5000px) {
+	.container {
+		width: 50%;
+	}
+
+	.main {
+		padding: 30px 50px 50px 50px;
+	}
+
+	.header {
+		padding: 50px 50px 20px 50px;
+	}
+}
+
+.container {
+	margin: 1em 0;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.resume {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+/*
+ *===============================================
+ * 顶部信息
+ *===============================================
+ **/
+
+.header {
+	display: flex;
+	flex-direction: row;
+}
+
+.left-header {
+	flex: 1;
+	order: 1;
+}
+
+.right-header {
+	flex: 1;
+	order: 2;
+	text-align: right;
+}
+
+@media (max-width: 520px) {
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.left-header {
+		flex: 1;
+		order: 2;
+	}
+
+	.right-header {
+		flex: 1;
+		order: 1;
+		text-align: left;
+		margin-bottom: 1em;
+	}
+}
+
+.right-header h1 {
+	font-size: 4em;
+	font-weight: bold;
+	color: #0091FE;
+	margin: 0 0 10px 0;
+}
+
+.right-header h2 {
+	font-size: 1.3em;
+	font-weight: normal;
+	color: #0091FE;
+	margin: 0;
+}
+
+.left-header p {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+.left-header i {
+	margin-right: 0.6em;
+}
+
+.left-header a {
+	text-decoration: none;
+	color: #24292e;
+}
+
+
+
+
+/*
+ *===============================================
+ * 横线
+ *===============================================
+ **/
+
+.line {
+	overflow: hidden;
+}
+
+.line-left {
+	width: 65%;
+	border-top: 1em solid #0091FE;
+	border-left: 100% solid #0091FE;
+	border-right: 1em solid transparent;
+	float: left;
+}
+
+.line-right {
+	width: 33%;
+	border-bottom: 1em solid #0091FE;
+	border-left: 1em solid transparent;
+	border-right: 100% solid #0091FE;
+	float: right;
+}
+
+
+
+
+/*
+ *===============================================
+ * 教育背景、个人技能、项目经验、个人评价
+ *===============================================
+ **/
+
+.main-part {
+	margin-bottom: 30px;
+	padding-left: 54px;
+	position: relative;
+}
+
+.main-part::after {
+	content: "";
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #0091FE;
+	position: absolute;
+	left: 15px;
+	bottom: -7px;
+}
+
+.main-title {
+	font-size: 28px;
+	font-weight: bold;
+	color: #0091FE;
+	position: relative;
+}
+
+.education::before {
+	content: "\f19d";
+}
+
+.skill::before {
+	content: "\f0ae";
+}
+
+.program::before {
+	content: "\f085";
+}
+
+.evaluation::before {
+	content: "\f234";
+}
+
+.main-title::before {
+	font-family: "FontAwesome";
+	font-size: 20px;
+	background-color: #0091FE;
+	color: white;
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	border-radius: 50%;
+	position: absolute;
+	left: -54px;
+	top: -6px;
+}
+
+.main-content {
+	list-style: none;
+	border-left: 6px solid #0091FE;
+	margin-left: -35px;
+	padding-top: 20px;
+}
+
+.list-title {
+	font-size: 18px;
+	font-weight: bold;
+	position: relative;
+	background-position: -10px 0;
+	color: #4f575f;
+}
+
+.list-title::before {
+	content: "\f02b";
+	font-family: "FontAwesome";
+	font-size: 16px;
+	background-color: #0091FE;
+	color: white;
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	border-radius: 50%;
+	position: absolute;
+	left: -46px;
+	top: -8px;
+}
+
+.main-list {
+	margin-left: -21px;
+	padding-left: 46px;
+	margin-bottom: 20px;
+}
+
+.list-data dd {
+	margin: 10px 0;
+}
+
+.list-data dd::before {
+	content: "\f06c";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.list-data a {
+	text-decoration: none;
+	color: #24292e;
+}
+
+.list-data a:hover {
+	text-decoration: underline;
+}
+
+.evaluation-list {
+	margin: 0 0 10px -21px;
+	padding-left: 46px;
+}
+
+.evaluation-list::before {
+	content: "\f06c";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 10px;
+}
+
+
+/*
+ *===============================================
+ * 打印PDF
+ *===============================================
+ **/
+
+@media print {
+	aside {
+		display: none;
+	}
+
+	.container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.main {
+		padding: 10px 5px 5px 5px;
+	}
+
+	.header {
+		padding: 5px 5px 5px 5px;
+	}
+}
