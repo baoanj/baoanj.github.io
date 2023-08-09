@@ -1,5 +1,5 @@
 # [我的主页](https://baoanj.github.io/)
 
-## [个人简历](https://baoanj.github.io/resume/)
+## [Rea.js](https://baoanj.github.io/rea.js/)
 
 ## [算法可视化](https://baoanj.github.io/algor-visual/)
